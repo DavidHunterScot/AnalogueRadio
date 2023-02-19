@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>{% if title %}{{ title }} - {% endif %}Analogue Radio</title>
+        <title><?php if( isset( $page_title ) && $page_title ) echo $page_title . " - "; ?>Analogue Radio</title>
 
         <link rel="stylesheet" type="text/css" href="https://w3css.staticly.ict.rocks/4.15/w3.css">
         <link rel="stylesheet" type="text/css" href="https://w3css.staticly.ict.rocks/w3-colors-metro.css">
@@ -22,7 +22,7 @@
         <div class="w3-auto w3-padding w3-black">
             <h1><b>Analoge Radio</b></h1>
             <hr>
-            {{ content | safe }}
+            <?php if( isset( $page_content ) && is_callable( $page_content ) ) $page_content(); ?>
         </div>
     </body>
 </html>
