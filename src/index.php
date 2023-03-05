@@ -1,5 +1,7 @@
 <?php
 
+$current_nav_item = "home";
+
 $page_content = function()
 {
 ?>
